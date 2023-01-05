@@ -37,7 +37,7 @@ public class MatchingPool extends Thread {
         try {
             List<Player> newPlayers = new ArrayList<>();
             for (Player player : players) {
-                if (player.getUserId().equals(userId)) {
+                if (!player.getUserId().equals(userId)) {
                     newPlayers.add(player);
                 }
             }

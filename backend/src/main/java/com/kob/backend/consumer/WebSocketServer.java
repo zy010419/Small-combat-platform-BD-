@@ -152,7 +152,7 @@ public class WebSocketServer {
     }
 
     @OnMessage
-    public void onMessage(String message, Session session) {
+    public void onMessage(String message) { // 路由
         // 从Client接收消息, 当做路由
         System.out.println("receive message!");
         JSONObject data = JSONObject.parseObject(message);
@@ -167,7 +167,7 @@ public class WebSocketServer {
     }
 
     @OnError
-    public void onError(Session session, Throwable error) {
+    public void onError(Throwable error) {
         error.printStackTrace();
     }
 
